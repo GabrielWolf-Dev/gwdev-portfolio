@@ -1,0 +1,45 @@
+/* Reset: */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Source Code Pro', monospace;
+}
+
+ul { list-style-type: none; }
+
+a { text-decoration: none; }
+
+textarea { resize: none; }
+
+fieldset { border: 0; }
+
+button, input[type="submit"] {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* ----------------------------------------------------------------------------------- */
+/* Default Style */
+
+:root {
+  font-size: 18px;
+
+  /* Colors */
+  --color-gray-white: #EEEEEE;
+  --color-black: #212121;
+  --color-blue: #00ADB5;
+  --color-green: #19B500;
+  --color-mat-purple-dark: #3F3D56;
+  --color-cian-darker: #222831;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 48px auto;
+  padding: 0 2%;
+}
+
+/* ----------------------------------------------------------------------------------- */
