@@ -1,7 +1,16 @@
+/* Components */
+import Header from "../src/components/Header";
+
 export default function Blog(){
+    const linksHeader = [
+        "Blog",
+        "Medium",
+        "Creditos"
+    ];
+
     return(
         <>
-            Blog Page
+            <Header linksMenu={linksHeader} />
         </>
     );
 }
