@@ -25,9 +25,9 @@ export async function getStaticProps() {
   const nameUser = "GabrielWolf-Dev";
   const url = "https://api.github.com/users/" + nameUser;
   const response = await fetch(url);
-  const { name, bio, html_url, created_at, updated_at, avatar_url } = await response.json();
+  const { login, bio, html_url, created_at, updated_at, avatar_url } = await response.json();
   const bannerDatas = {
-      name,
+      name: login,
       bio,
       html_url,
       avatar_url

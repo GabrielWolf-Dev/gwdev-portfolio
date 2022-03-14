@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Typewriter } from 'react-simple-typewriter';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithubAlt, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
@@ -9,6 +10,13 @@ import styleSpace from '../../../styles/spaces.module.css';
 
 export default function Banner({ gitHubDatas }) {
     const mailTo = "gabrielw.contato@gmail.com";
+    const words = [
+        gitHubDatas.name,
+        "Front-End",
+        "Engenharia de Software",
+        "UI/UX Design",
+        "JavaScript 🧑‍💻"
+    ];
 
     return(
         <section className={styles.banner}>
@@ -22,7 +30,17 @@ export default function Banner({ gitHubDatas }) {
                 />
 
                 <div className={styles["banner__content"]}>
-                    <h1 className={styleFonts.title}>{gitHubDatas.name}</h1>
+                    <h1 className={styleFonts.title}>
+                        <Typewriter
+                            words={words}
+                            loop={0}
+                            cursor
+                            cursorStyle='|'
+                            typeSpeed={60}
+                            deleteSpeed={40}
+                            delaySpeed={1000}
+                        />
+                    </h1>
                     <p className={`${styleFonts.paragraph} ${styleSpace["my-18"]}`}>{gitHubDatas.bio}</p>
 
                     <div>

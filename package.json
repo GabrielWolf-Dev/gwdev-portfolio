@@ -16,7 +16,8 @@
     "@fortawesome/react-fontawesome": "^0.1.17",
     "next": "12.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-simple-typewriter": "^3.0.1"
   },
   "devDependencies": {
     "eslint": "8.9.0",
