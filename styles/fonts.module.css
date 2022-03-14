@@ -1,0 +1,10 @@
+.title {
+    font-size: 1.56rem;
+    font-weight: bold;
+    color: var(--color-green);
+}
+
+.paragraph {
+    font-size: 1.15rem;
+    color: var(--color-gray-white);
+}
