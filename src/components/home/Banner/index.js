@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithubAlt, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
-import styles from '../../../styles/home.module.css';
-import styleFonts from '../../../styles/fonts.module.css';
-import styleSpace from '../../../styles/spaces.module.css';
+import styles from '../../../../styles/home.module.css';
+import styleFonts from '../../../../styles/fonts.module.css';
+import styleSpace from '../../../../styles/spaces.module.css';
 
 export default function Banner({ gitHubDatas }) {
     const mailTo = "gabrielw.contato@gmail.com";

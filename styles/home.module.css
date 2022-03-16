@@ -121,6 +121,33 @@
 
 .banner__content__icons:first-child { margin: 0 24px 0 0; }
 
+.about {
+    width: 100%;
+    padding: 48px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.about__content {
+    padding: 0 6%;
+}
+
+.about__img {
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+}
+
+@media (min-width: 1580px) {
+    /* About */
+    .about__img {
+        max-width: 600px;
+    }
+}
+
 @media (min-width: 768px) {
     .menu-desktop { display: block; }
     .menu-mobile { display: none; }
@@ -155,5 +182,15 @@
 
     .banner-container {
         flex-direction: row;
+    }
+
+    /* About */
+    .about {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .about__img {
+        max-width: 400px;
     }
 }
