@@ -151,6 +151,14 @@
     text-align: center;
 }
 
+.skills__imgs {
+    width: 100%;
+    max-width: 42px;
+    height: 42px;
+    margin: 0 8px;
+    display: inline-block;
+}
+
 @media (min-width: 768px) {
     .menu-desktop { display: block; }
     .menu-mobile { display: none; }

@@ -1,3 +1,4 @@
+import { getMainIconTechs, getBasicIconTechs } from '../cms/dato-cms';
 /* Components */
 import TitleHead from '../src/components/Head';
 import Header from '../src/components/Header';
@@ -20,7 +21,7 @@ export default function Home(props) {
       <Header linksMenu={linksHeader} />
       <Banner gitHubDatas={props.bannerDatas} />
       <About />
-      <Skills experience={props.experience} />
+      <Skills experience={props.experience} mainTechIcons={props.mainTechIcons} basicTechIcons={props.basicTechIcons}  />
     </>
   )
 }
@@ -37,12 +38,17 @@ export async function getStaticProps() {
       avatar_url
   };
   const experience = { created_at, updated_at };
-
+  const mainTechIcons = await getMainIconTechs();
+  const basicTechIcons = await getBasicIconTechs();
+  const revalidateTemp = 604800 / 86400; // 7 dias
 
   return {
     props: {
       bannerDatas,
-      experience
+      experience,
+      mainTechIcons,
+      basicTechIcons,
     },
+    revalidate: revalidateTemp
   }
 }
