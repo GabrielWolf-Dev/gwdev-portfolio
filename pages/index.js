@@ -3,6 +3,7 @@ import TitleHead from '../src/components/Head';
 import Header from '../src/components/Header';
 import About from '../src/components/home/About';
 import Banner from '../src/components/home/Banner';
+import Skills from '../src/components/Skills';
 
 export default function Home(props) {
   const linksHeader = [
@@ -19,6 +20,7 @@ export default function Home(props) {
       <Header linksMenu={linksHeader} />
       <Banner gitHubDatas={props.bannerDatas} />
       <About />
+      <Skills experience={props.experience} />
     </>
   )
 }

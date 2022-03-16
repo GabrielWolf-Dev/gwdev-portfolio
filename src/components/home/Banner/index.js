@@ -41,7 +41,7 @@ export default function Banner({ gitHubDatas }) {
                             delaySpeed={1000}
                         />
                     </h1>
-                    <p className={`${styleFonts.paragraph} ${styleSpace["my-18"]}`}>{gitHubDatas.bio}</p>
+                    <p className={`${styleFonts.paragraph} ${styleFonts["text-white"]} ${styleSpace["my-18"]}`}>{gitHubDatas.bio}</p>
 
                     <div>
                         <a href="https://www.linkedin.com/in/gabriel-wolf-frontend/" target="_blank" rel="noreferrer">

@@ -129,6 +129,7 @@
     align-items: center;
     flex-direction: column;
     gap: 32px;
+    background-color: var(--color-gray-white);
 }
 
 .about__content {
@@ -141,11 +142,13 @@
     margin-left: auto;
 }
 
-@media (min-width: 1580px) {
-    /* About */
-    .about__img {
-        max-width: 600px;
-    }
+/* Skills */
+.skills {
+    width: 100%;
+    padding: 48px 2%;
+    background-color: var(--color-cian-darker);
+    color: var(--color-gray-white);
+    text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -192,5 +195,12 @@
 
     .about__img {
         max-width: 400px;
+    }
+}
+
+@media (min-width: 1580px) {
+    /* About */
+    .about__img {
+        max-width: 600px;
     }
 }
