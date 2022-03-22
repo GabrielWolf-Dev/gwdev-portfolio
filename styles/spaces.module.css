@@ -2,10 +2,18 @@
     margin: 18px 0;
 }
 
+.my-8 {
+    margin: 8px 0;
+}
+
 .my-24 {
     margin: 24px 0;
 }
 
 .mtop-16 {
     margin-top: 16px;
+}
+
+.mbottom-32 {
+    margin-bottom: 32px;
 }

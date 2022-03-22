@@ -15,3 +15,7 @@
 }
 
 .text-white { color: var(--color-gray-white); }
+
+.text-green { color: var(--color-green); }
+
+.text-center { text-align: center; }

@@ -4,6 +4,7 @@ import TitleHead from '../src/components/Head';
 import Header from '../src/components/Header';
 import About from '../src/components/home/About';
 import Banner from '../src/components/home/Banner';
+import LastAct from '../src/components/home/LastAct';
 import Skills from '../src/components/Skills';
 
 export default function Home(props) {
@@ -21,7 +22,12 @@ export default function Home(props) {
       <Header linksMenu={linksHeader} />
       <Banner gitHubDatas={props.bannerDatas} />
       <About />
-      <Skills experience={props.experience} mainTechIcons={props.mainTechIcons} basicTechIcons={props.basicTechIcons}  />
+      <Skills
+        experience={props.experience}
+        mainTechIcons={props.mainTechIcons}
+        basicTechIcons={props.basicTechIcons}
+      />
+      <LastAct gitActs={props.gitActs} />
     </>
   )
 }
@@ -29,8 +35,8 @@ export default function Home(props) {
 export async function getStaticProps() {
   const nameUser = "GabrielWolf-Dev";
   const url = "https://api.github.com/users/" + nameUser;
-  const response = await fetch(url);
-  const { login, bio, html_url, created_at, updated_at, avatar_url } = await response.json();
+  const resGitDatas = await fetch(url);
+  const { login, bio, html_url, created_at, updated_at, avatar_url } = await resGitDatas.json();
   const bannerDatas = {
       name: login,
       bio,
@@ -40,14 +46,36 @@ export async function getStaticProps() {
   const experience = { created_at, updated_at };
   const mainTechIcons = await getMainIconTechs();
   const basicTechIcons = await getBasicIconTechs();
-  const revalidateTemp = 604800 / 86400; // 7 dias
+  const resGitActs = await fetch(`${url}/repos?order=asc&sort=updated_at`);
+  const gitActsData = await resGitActs.json();
+  const gitActs = [];
+  gitActsData.forEach((act, index) => {
+    const date = new Date(act.created_at);
+    const day = date.getDate().toPrecision();
+    const month = (date.getMonth() + 1);
+    const year = date.getFullYear();
 
+    if(index < 4) {
+      return gitActs.push({
+        id: act.id,
+        repo_url: act.html_url,
+        clone_url: act.clone_url,
+        name: act.name,
+        desc: act.description,
+        tech: act.language,
+        created_at: `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}/${year}`
+      });
+    }
+  });
+  const revalidateTemp = 604800 / 86400; // 7 dias
+  
   return {
     props: {
       bannerDatas,
       experience,
       mainTechIcons,
       basicTechIcons,
+      gitActs,
     },
     revalidate: revalidateTemp
   }

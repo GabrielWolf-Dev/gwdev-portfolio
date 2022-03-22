@@ -14,7 +14,7 @@ export default function Skills({ experience, mainTechIcons, basicTechIcons }) {
             <div className={`container`}>
                 <h2 className={styleFonts["sub-title"]}>Habilidades</h2>
                 <p className={styleSpaces["my-24"]}>
-                Com {currentExp} anos de experiência a partir de estudos, trabalhos e projetos, desenvolvo websites escaláveis, com performance, acessíveis e com padrões de projeto.
+                    Com {currentExp} anos de experiência a partir de estudos, trabalhos e projetos, desenvolvo websites escaláveis, com performance, acessíveis e com padrões de projeto.
                 </p>
 
                 {
