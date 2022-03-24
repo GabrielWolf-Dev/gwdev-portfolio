@@ -227,6 +227,14 @@
   visibility: visible;
 }
 
+/* Main Project */
+.main-project {
+    width: 100%;
+    padding: 48px 2%;
+    text-align: center;
+    background-color: var(--color-cian-darker);
+}
+
 @media (min-width: 768px) {
     .menu-desktop { display: block; }
     .menu-mobile { display: none; }

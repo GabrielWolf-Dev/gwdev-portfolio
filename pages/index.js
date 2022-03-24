@@ -1,11 +1,12 @@
-import { getMainIconTechs, getBasicIconTechs } from '../cms/dato-cms';
+import { getMainIconTechs, getBasicIconTechs, getMainProjects } from '../cms/dato-cms';
 /* Components */
 import TitleHead from '../src/components/Head';
 import Header from '../src/components/Header';
 import About from '../src/components/home/About';
 import Banner from '../src/components/home/Banner';
 import LastAct from '../src/components/home/LastAct';
-import Skills from '../src/components/Skills';
+import MainProjects from '../src/components/home/MainProjets';
+import Skills from '../src/components/home/Skills';
 
 export default function Home(props) {
   const linksHeader = [
@@ -28,6 +29,7 @@ export default function Home(props) {
         basicTechIcons={props.basicTechIcons}
       />
       <LastAct gitActs={props.gitActs} />
+      <MainProjects mainProjects={props.mainProjects} />
     </>
   )
 }
@@ -46,6 +48,7 @@ export async function getStaticProps() {
   const experience = { created_at, updated_at };
   const mainTechIcons = await getMainIconTechs();
   const basicTechIcons = await getBasicIconTechs();
+  const mainProjects = await getMainProjects();
   const resGitActs = await fetch(`${url}/repos?order=asc&sort=updated_at`);
   const gitActsData = await resGitActs.json();
   const gitActs = [];
@@ -76,6 +79,7 @@ export async function getStaticProps() {
       mainTechIcons,
       basicTechIcons,
       gitActs,
+      mainProjects
     },
     revalidate: revalidateTemp
   }

@@ -22,7 +22,7 @@ async function fetchCmsApi(query, { variables } = {}) {
 async function getMainIconTechs() {
     const data = await fetchCmsApi(`
         {
-            allHomes {
+            allIconHomes {
                 id,
                 nameLogoMain,
                 logoImgMain {
@@ -32,13 +32,13 @@ async function getMainIconTechs() {
         }
     `);
 
-    return data.allHomes;
+    return data.allIconHomes;
 }
 
 async function getBasicIconTechs() {
     const data = await fetchCmsApi(`
         {
-            allHomes {
+            allIconHomes {
                 id,
                 nameLogoBasic,
                 logoImgBasic {
@@ -48,10 +48,27 @@ async function getBasicIconTechs() {
         }
     `);
 
-    return data.allHomes;
+    return data.allIconHomes;
+}
+
+async function getMainProjects(){
+    const data = await fetchCmsApi(`
+    {
+        allMainProjects {
+            id,
+            nameProject,
+            description,
+            urlRepo,
+            urlProject
+        }
+    }
+`);
+
+return data.allMainProjects;
 }
 
 export {
     getMainIconTechs,
-    getBasicIconTechs
+    getBasicIconTechs,
+    getMainProjects
 };

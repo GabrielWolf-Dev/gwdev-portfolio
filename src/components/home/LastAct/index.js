@@ -21,7 +21,7 @@ export default function LastAct({ gitActs }) {
     }
 
     return(
-        <section className="container">
+        <section className="container" id="projetos">
             <h2
                 className={`${styleFonts.title} ${styleFonts["text-center"]} ${styleSpaces["mbottom-32"]}`}
             >Últimas atividades(GitHub)</h2>

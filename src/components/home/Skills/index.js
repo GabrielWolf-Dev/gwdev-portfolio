@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from '../../../styles/home.module.css';
-import styleFonts from '../../../styles/fonts.module.css';
-import styleSpaces from '../../../styles/spaces.module.css';
+import styles from '../../../../styles/home.module.css';
+import styleFonts from '../../../../styles/fonts.module.css';
+import styleSpaces from '../../../../styles/spaces.module.css';
 
 export default function Skills({ experience, mainTechIcons, basicTechIcons }) {
     const { created_at, updated_at } = experience;

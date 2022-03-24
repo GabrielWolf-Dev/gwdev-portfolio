@@ -44,7 +44,7 @@ export default function Banner({ gitHubDatas }) {
                     <p
                         className={`${styleFonts.paragraph}
                         ${styleFonts["text-white"]}
-                        ${styleSpace["my-18"]}`}
+                        ${styleSpace["my-16"]}`}
                     >{gitHubDatas.bio}</p>
 
                     <div>

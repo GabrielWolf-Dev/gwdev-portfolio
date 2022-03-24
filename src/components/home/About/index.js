@@ -5,7 +5,7 @@ import styleSpaces from '../../../../styles/spaces.module.css';
 
 export default function About() {
     return(
-        <section className={styles.about}>
+        <section className={styles.about} id="sobre">
             <div className={styles["about__content"]}>
                 <h2 className={styleFonts["sub-title"]}>Um pouco da minha história</h2>
                 <p className={`${styleFonts["paragraph"]} ${styleSpaces["mtop-16"]}`}>
