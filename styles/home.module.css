@@ -235,6 +235,50 @@
     background-color: var(--color-cian-darker);
 }
 
+.main-project__container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main-project__project {
+    width: 100%;
+    max-width: 450px;
+    height: 350px;
+    background-color: var(--color-mat-purple-dark);
+    border: 1px solid var(--color-gray-white);
+    padding: 16px;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+}
+
+.main-project__box-content {
+    overflow-y: auto;
+    width: 90%;
+    height: 70%;
+}
+
+.main-project__repo-link {
+    width: 100%;
+    max-width: 32px;
+    height: 32px;
+    color: var(--color-green);
+    position: absolute;
+    cursor: pointer;
+}
+
+.main-project__project-link {
+    width: 100%;
+    max-width: 32px;
+    height: 32px;
+    color: var(--color-blue);
+    position: absolute;
+    right: 16px;
+    cursor: pointer;
+}
+
 @media (min-width: 768px) {
     .menu-desktop { display: block; }
     .menu-mobile { display: none; }

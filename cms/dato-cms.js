@@ -54,12 +54,14 @@ async function getBasicIconTechs() {
 async function getMainProjects(){
     const data = await fetchCmsApi(`
     {
-        allMainProjects {
-            id,
-            nameProject,
-            description,
-            urlRepo,
-            urlProject
+        allMainProjects(
+          orderBy: createdAt_ASC
+        ){
+          id,
+          nameProject,
+          description,
+          urlRepo,
+          urlProject
         }
     }
 `);

@@ -1,6 +1,9 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCode, faLink } from '@fortawesome/free-solid-svg-icons';
+
 import styles from '../../../../styles/home.module.css';
 import styleFonts from '../../../../styles/fonts.module.css';
-import styleSpace from '../../../../styles/spaces.module.css';
+import styleSpaces from '../../../../styles/spaces.module.css';
 
 export default function MainProjects({ mainProjects }) {
     return(
@@ -10,27 +13,32 @@ export default function MainProjects({ mainProjects }) {
                 className={`
                     ${styleFonts.paragraph} 
                     ${styleFonts["text-white"]} 
-                    ${styleSpace["my-16"]}
+                    ${styleSpaces["my-16"]}
                 `}
             >
                 Aqui estão os principais projetos atuais:
             </p>
             
-            Consumindo os dados(teste)
-            {
-                mainProjects.map(({ id, nameProject, description, urlRepo, urlProject }) => (
-                    <div key={id}>
-                        Nome: {nameProject}
-                        <br />
-                        Descrição: {description}
-                        <br />
-                        urlRepo: {urlRepo}
-                        <br />
-                        urlProject: {urlProject}
-                        <br />
-                    </div>
-                ))
-            }
+            <div className={styles["main-project__container"]}>
+                {
+                    mainProjects.map(project => (
+                        <aside key={project.id} className={styles["main-project__project"]}>
+                            <h3 className={`${styleFonts["text-green"]}`}>{project.nameProject}</h3>
+                            <div className={`${styles["main-project__box-content"]} ${styleSpaces["my-8"]}`}>
+                                <p className={`${styleFonts["text-white"]}`}>{project.description}</p>
+                            </div>
+                        
+                            <a target="_blank" rel="noreferrer" href={project.urlRepo} className={styles["main-project__repo-link"]}>
+                                <FontAwesomeIcon icon={faCode} />
+                            </a>
+                        
+                            <a target="_blank" rel="noreferrer" href={project.urlProject} className={styles["main-project__project-link"]}>
+                                <FontAwesomeIcon icon={faLink} />
+                            </a>
+                        </aside>
+                    ))
+                }
+            </div>
         </section>
     );
 }
