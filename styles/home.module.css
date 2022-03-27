@@ -279,6 +279,93 @@
     cursor: pointer;
 }
 
+/* Contact */
+.contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+    padding: 48px 2%;
+}
+
+.contact__img {
+    width: 100%;
+    max-width: 300px;
+    background-image: url(../public/imgs/bg-contact.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.contact__form {
+    width: 100%;
+    max-width: 300px;
+}
+
+.contact__label {
+    display: block;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.contact__input {
+    width: 100%;
+    height: 32px;
+    border-radius: 6px;
+    padding-left: 8px;
+    border: 1px solid var(--color-blue);
+    margin-bottom: 4px;
+}
+
+.contact__msg-textarea {
+    width: 100%;
+    height: 120px;
+    padding: 8px;
+    border: 1px solid var(--color-blue);
+    border-radius: 6px;
+    margin-bottom: 4px;
+}
+
+.contact__submit {
+    width: 120px;
+    height: 42px;
+    border-radius: 6px;
+    background-color: var(--color-blue);
+    color: var(--color-gray-white);
+    margin-top: 24px;
+}
+
+.contact__msg {
+    width: 100%;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 1rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: all ease-out .3s;
+    color: var(--color-gray-white);
+}
+
+.contact__msg-success {
+    max-width: 350px;
+    background-color: var(--color-green);
+}
+
+.contact__msg-error {
+    max-width: 500px;
+    background-color: var(--color-red);
+}
+
+.contact__msg--active {
+    opacity: 1;
+    visibility: visible;
+}
+
 @media (min-width: 768px) {
     .menu-desktop { display: block; }
     .menu-mobile { display: none; }
@@ -327,6 +414,27 @@
 
     /* Act */
     .last-act { height: 280px; }
+
+    /* Contact */
+    .contact  {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .contact__img {
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 1280px) {
+    /* Contact */
+    .contact__form {
+        max-width: 500px;
+    }
+
+    .contact__input {
+        height: 42px;
+    }
 }
 
 @media (min-width: 1580px) {

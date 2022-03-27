@@ -7,6 +7,7 @@ import Banner from '../src/components/home/Banner';
 import LastAct from '../src/components/home/LastAct';
 import MainProjects from '../src/components/home/MainProjets';
 import Skills from '../src/components/home/Skills';
+import Contact from '../src/components/home/Contact';
 
 export default function Home(props) {
   const linksHeader = [
@@ -30,6 +31,7 @@ export default function Home(props) {
       />
       <LastAct gitActs={props.gitActs} />
       <MainProjects mainProjects={props.mainProjects} />
+      <Contact />
     </>
   )
 }

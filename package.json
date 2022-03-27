@@ -14,10 +14,14 @@
     "@fortawesome/free-regular-svg-icons": "^6.0.0",
     "@fortawesome/free-solid-svg-icons": "^6.0.0",
     "@fortawesome/react-fontawesome": "^0.1.17",
+    "@lottiefiles/react-lottie-player": "^3.4.2",
+    "formik": "^2.2.9",
     "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-simple-typewriter": "^3.0.1"
+    "react-simple-typewriter": "^3.0.1",
+    "xss": "^1.0.11",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "eslint": "8.9.0",
