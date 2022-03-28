@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { filterXSS } from 'xss';
-import schema from './schema';
 
-import styles from '../../../../styles/home.module.css';
+/* Components & Styles */
+import schema from './schema';
+import styleHome from '../../../../styles/home.module.css';
 import styleFonts from '../../../../styles/fonts.module.css';
 import styleSpace from '../../../../styles/spaces.module.css';
 
@@ -53,23 +54,23 @@ export default function Contact(){
     }
 
     return(
-        <section id="contato" className={styles["contact"]}>
+        <section id="contato" className={styleHome["contact"]}>
             <div
                 className={`
-                    ${styles["contact__msg"]}
-                    ${styles["contact__msg-success"]}
-                    ${isSendForm ? styles["contact__msg--active"] : false}
+                    ${styleHome["contact__msg"]}
+                    ${styleHome["contact__msg-success"]}
+                    ${isSendForm && styleHome["contact__msg--active"]}
                 `}
             >{successMsg}</div>
             <div
                 className={`
-                    ${styles["contact__msg"]}
-                    ${styles["contact__msg-error"]}
-                    ${isSendForm === false ? styles["contact__msg--active"] : false}
+                    ${styleHome["contact__msg"]}
+                    ${styleHome["contact__msg-error"]}
+                    ${isSendForm === false && styleHome["contact__msg--active"]}
                 `}
             >{errorMsg}</div>
 
-            <main className={styles["contact__form"]}>
+            <main className={styleHome["contact__form"]}>
                 <h2
                     className={`
                         ${styleSpace["mbottom-16"]}
@@ -90,12 +91,12 @@ export default function Contact(){
                     {({ isValid }) => (
                         <Form>
                             <fieldset>
-                                <label className={styles["contact__label"]} htmlFor="name">Nome:</label>
+                                <label className={styleHome["contact__label"]} htmlFor="name">Nome:</label>
                                 <Field
                                     id="name"
                                     name="name"
                                     type="text"
-                                    className={styles["contact__input"]}
+                                    className={styleHome["contact__input"]}
                                     required
                                     placeholder="Digite o seu nome"
                                 />
@@ -107,12 +108,12 @@ export default function Contact(){
                             </fieldset>
                         
                             <fieldset>
-                                <label className={styles["contact__label"]} htmlFor="email">E-mail:</label>
+                                <label className={styleHome["contact__label"]} htmlFor="email">E-mail:</label>
                                 <Field
                                     id="email"
                                     name="email"
                                     type="email"
-                                    className={styles["contact__input"]}
+                                    className={styleHome["contact__input"]}
                                     required
                                     placeholder="Digite o seu melhor e-mail"
                                 />
@@ -124,13 +125,13 @@ export default function Contact(){
                             </fieldset>
                         
                             <fieldset>
-                                <label className={styles["contact__label"]} htmlFor="msg">Mensagem:</label>
+                                <label className={styleHome["contact__label"]} htmlFor="msg">Mensagem:</label>
                                 <Field
                                     id="msg"
                                     name="msg"
                                     type="text"
                                     as="textarea"
-                                    className={styles["contact__msg-textarea"]}
+                                    className={styleHome["contact__msg-textarea"]}
                                     required
                                     placeholder="Insira a sua mensagem"
                                 />
@@ -141,7 +142,7 @@ export default function Contact(){
                                 />
                             </fieldset>
                             <button
-                                className={styles["contact__submit"]}
+                                className={styleHome["contact__submit"]}
                                 type="submit"
                                 disabled={!isValid}
                                 style={{ cursor: !isValid && 'not-allowed' }}
@@ -151,7 +152,7 @@ export default function Contact(){
                 </Formik>
             </main>
 
-            <div className={styles["contact__img"]}>
+            <div className={styleHome["contact__img"]}>
                 <Player
                    autoplay
                    loop

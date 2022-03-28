@@ -1,0 +1,32 @@
+.footer {
+    width: 100%;
+    padding: 16px 4%;
+    background-color: var(--color-mat-purple-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer__link-item {
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.footer__link {
+    font-size: 1rem;
+    color: var(--color-gray-white);
+    transition: all ease-in .3s;
+}
+
+.footer__link:hover {
+    color: var(--color-blue);
+}
+
+@media (min-width: 768px) {
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

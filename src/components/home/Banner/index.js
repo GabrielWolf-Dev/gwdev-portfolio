@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithubAlt, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
-import styles from '../../../../styles/home.module.css';
+/* Components & Styles */
+import styleHome from '../../../../styles/home.module.css';
 import styleFonts from '../../../../styles/fonts.module.css';
 import styleSpace from '../../../../styles/spaces.module.css';
 
@@ -19,17 +20,17 @@ export default function Banner({ gitHubDatas }) {
     ];
 
     return(
-        <section className={styles.banner}>
-            <main className={styles["banner-container"]}>
+        <section className={styleHome.banner}>
+            <main className={styleHome["banner-container"]}>
                 <Image
                     width="280px"
                     height="280px"
-                    className={styles["banner__img"]}
+                    className={styleHome["banner__img"]}
                     src={gitHubDatas.avatar_url}
                     alt={`Foto de ${gitHubDatas.name}`}
                 />
 
-                <div className={styles["banner__content"]}>
+                <div className={styleHome["banner__content"]}>
                     <h1 className={styleFonts.title}>
                         <Typewriter
                             words={words}
@@ -53,21 +54,21 @@ export default function Banner({ gitHubDatas }) {
                             target="_blank"
                             rel="noreferrer"
                         >
-                            <FontAwesomeIcon className={styles["banner__content__icons"]} icon={faLinkedinIn} />
+                            <FontAwesomeIcon className={styleHome["banner__content__icons"]} icon={faLinkedinIn} />
                         </a>
                         <a
                             href={`mailto:${mailTo}`}
                             target="_blank"
                             rel="noreferrer"
                         >
-                            <FontAwesomeIcon className={styles["banner__content__icons"]} icon={faEnvelope} />
+                            <FontAwesomeIcon className={styleHome["banner__content__icons"]} icon={faEnvelope} />
                         </a>
                         <a
                             href="https://github.com/GabrielWolf-Dev"
                             target="_blank"
                             rel="noreferrer"
                         >
-                            <FontAwesomeIcon className={styles["banner__content__icons"]} icon={faGithubAlt} />
+                            <FontAwesomeIcon className={styleHome["banner__content__icons"]} icon={faGithubAlt} />
                         </a>
                     </div>
                 </div>

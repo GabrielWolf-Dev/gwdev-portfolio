@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 /* Components & Styles */
-import styles from '../../../styles/home.module.css';
+import styles from './style.module.css';
 import Link from '../Link';
 
 export default function Header({ linksMenu }){

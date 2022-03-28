@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from '../../../../styles/home.module.css';
+
+/* Components & Styles */
+import styleHome from '../../../../styles/home.module.css';
 import styleFonts from '../../../../styles/fonts.module.css';
 import styleSpaces from '../../../../styles/spaces.module.css';
 
@@ -10,7 +12,7 @@ export default function Skills({ experience, mainTechIcons, basicTechIcons }) {
     const currentExp = currentDateAccount - createdDateAccount;
 
     return(
-        <section className={styles.skills}>
+        <section className={styleHome.skills}>
             <div className={`container`}>
                 <h2 className={styleFonts["sub-title"]}>Habilidades</h2>
                 <p className={styleSpaces["my-24"]}>
@@ -20,7 +22,7 @@ export default function Skills({ experience, mainTechIcons, basicTechIcons }) {
                 {
                     mainTechIcons.map(({ id, nameLogoMain, logoImgMain }) => 
                         <img
-                            className={styles["skills__imgs"]}
+                            className={styleHome["skills__imgs"]}
                             key={id} src={logoImgMain.url}
                             alt={nameLogoMain}
                         />)
@@ -31,7 +33,7 @@ export default function Skills({ experience, mainTechIcons, basicTechIcons }) {
                     basicTechIcons.map(({ id, nameLogoBasic, logoImgBasic }) =>
                         logoImgBasic !== null 
                         ? <img
-                            className={styles["skills__imgs"]}
+                            className={styleHome["skills__imgs"]}
                             key={id}
                             src={logoImgBasic.url}
                             alt={nameLogoBasic}

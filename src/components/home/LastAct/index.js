@@ -1,10 +1,11 @@
 import { useState } from 'react';
-
-import styles from '../../../../styles/home.module.css';
-import styleFonts from '../../../../styles/fonts.module.css';
-import styleSpaces from '../../../../styles/spaces.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClone, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
+/* Components & Styles */
+import styleHome from '../../../../styles/home.module.css';
+import styleFonts from '../../../../styles/fonts.module.css';
+import styleSpaces from '../../../../styles/spaces.module.css';
 
 
 export default function LastAct({ gitActs }) {
@@ -31,21 +32,21 @@ export default function LastAct({ gitActs }) {
                     gitActs.map(act => (
                         <aside
                             key={act.id}
-                            className={styles["last-act"]}
+                            className={styleHome["last-act"]}
                         >
                             <h3 className={styleFonts["text-green"]}>{act.name}</h3>
                         
-                            <div className={`${styles["last-act__desc-box"]} ${styleSpaces["my-8"]}`}>
+                            <div className={`${styleHome["last-act__desc-box"]} ${styleSpaces["my-8"]}`}>
                                 <p className={`${styleFonts["text-white"]}`}>{act.desc}.</p>
                                 <p className={styleFonts["text-white"]}><strong>Principal tech:</strong> {act.tech}.</p>
                             </div>
                         
-                            <span className={`${styles["last-act__date"]} ${styleFonts["text-green"]}`}>Criado em {act.created_at}</span>
+                            <span className={`${styleHome["last-act__date"]} ${styleFonts["text-green"]}`}>Criado em {act.created_at}</span>
                         
                             <button
                                 data-url={act.clone_url}
                                 onClick={copyUrl} 
-                                className={styles["last-act__btn-clone"]}
+                                className={styleHome["last-act__btn-clone"]}
                                 id="btn-clone"
                             >
                                 <FontAwesomeIcon icon={faClone} />
@@ -53,7 +54,7 @@ export default function LastAct({ gitActs }) {
                             <a
                                 target="_blank"
                                 href={act.repo_url}
-                                className={styles["last-act__btn-repo"]}
+                                className={styleHome["last-act__btn-repo"]}
                                 rel="noreferrer"
                             >
                                 <FontAwesomeIcon icon={faArrowRight} />
@@ -65,8 +66,8 @@ export default function LastAct({ gitActs }) {
 
             <div
                 className={isCopyied 
-                    ? `${styles["copy-msg"]} ${styles["copy-msg--active"]}` 
-                    : styles["copy-msg"]}
+                    ? `${styleHome["copy-msg"]} ${styleHome["copy-msg--active"]}` 
+                    : styleHome["copy-msg"]}
             >Copiado com sucesso!</div>
         </section>
     );
