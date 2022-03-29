@@ -21,10 +21,10 @@ async function fetchCmsApi(query, { variables } = {}) {
 
 async function getMainIconTechs() {
     const data = await fetchCmsApi(`
-        {
+        query {
             allIconHomes {
-                id,
-                nameLogoMain,
+                id
+                nameLogoMain
                 logoImgMain {
                     url(imgixParams: { fm: jpg, fit: crop, w: 42, h: 42 })
                 }
@@ -37,10 +37,10 @@ async function getMainIconTechs() {
 
 async function getBasicIconTechs() {
     const data = await fetchCmsApi(`
-        {
+        query {
             allIconHomes {
-                id,
-                nameLogoBasic,
+                id
+                nameLogoBasic
                 logoImgBasic {
                     url(imgixParams: { fm: jpg, fit: crop, w: 42, h: 42 })
                 }
@@ -53,24 +53,86 @@ async function getBasicIconTechs() {
 
 async function getMainProjects(){
     const data = await fetchCmsApi(`
-    {
-        allMainProjects(
-          orderBy: createdAt_ASC
-        ){
-          id,
-          nameProject,
-          description,
-          urlRepo,
-          urlProject
+    query {
+            allMainProjects(
+              orderBy: createdAt_ASC
+            ){
+              id
+              nameProject
+              description
+              urlRepo
+              urlProject
+            }
         }
-    }
-`);
+    `);
 
-return data.allMainProjects;
+    return data.allMainProjects;
+}
+
+async function getListPosts() {
+    const data = await fetchCmsApi(`
+        query {
+            allPosts {
+                id
+                title
+                slugPost
+                imgPost {
+                    url(imgixParams: { fm: jpg, fit: crop, w: 600, h: 350 })
+                    alt
+                }
+            }
+        }
+    `);
+
+    return data.allPosts;
+}
+
+async function getPost(slug) {
+    const data = await fetchCmsApi(`
+        query {
+            post(
+              filter: {
+                slugPost: {
+                  eq: ${slug}
+                }
+              }
+            ){
+                title
+                slugPost
+                content1
+                imgPost {
+                    url(imgixParams: { fm: jpg, fit: crop, w: 600, h: 350 })
+                  alt
+                }
+                content2
+                imgSecondary  {
+                    url(imgixParams: { fm: jpg, fit: crop, w: 600, h: 350 })
+                  alt
+                }
+            }
+        }
+    `);
+
+    return data.post;
+}
+
+async function getAllSlugs(){
+    const data = await fetchCmsApi(`
+        query {
+            allPosts {
+              slugPost
+            }
+        }
+    `);
+
+    return data.allPosts;
 }
 
 export {
     getMainIconTechs,
     getBasicIconTechs,
-    getMainProjects
+    getMainProjects,
+    getListPosts,
+    getPost,
+    getAllSlugs
 };
