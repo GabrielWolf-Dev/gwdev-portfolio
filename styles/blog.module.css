@@ -1,0 +1,38 @@
+/* Banner */
+.banner {
+    width: 100%;
+    padding: 48px 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+    background-color: var(--color-cian-darker);
+    text-align: center;
+}
+
+.banner__img {
+    width: 100%;
+    max-width: 500px;
+    background-image: url(../public/svg/bg-banner-blog.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.banner__desc {
+    width: 80%;
+}
+
+@media (min-width: 768px) {
+    /* Banner */
+    .banner {
+        text-align: left;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .banner__desc {
+        width: 800px;
+    }
+}

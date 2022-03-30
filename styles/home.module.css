@@ -218,7 +218,7 @@
 .contact__img {
     width: 100%;
     max-width: 300px;
-    background-image: url(../public/imgs/bg-contact.png);
+    background-image: url(../public/svg/bg-contact.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -263,7 +263,6 @@
 }
 
 .contact__msg {
-    width: 100%;
     position: fixed;
     top: 16px;
     right: 16px;
@@ -277,12 +276,10 @@
 }
 
 .contact__msg-success {
-    max-width: 350px;
     background-color: var(--color-green);
 }
 
 .contact__msg-error {
-    max-width: 500px;
     background-color: var(--color-red);
 }
 

@@ -3,7 +3,7 @@ import { getListPosts } from '../cms/dato-cms';
 /* Components */
 import Header from "../src/components/Header";
 import Footer from '../src/components/Footer';
-import Link from '../src/components/Link';
+import Banner from '../src/components/blog/Banner';
 
 export default function Blog(props){
     const linksHeader = [
@@ -15,14 +15,15 @@ export default function Blog(props){
     return(
         <>
             <Header linksMenu={linksHeader} />
-            {
+            <Banner />
+            {/*
                 props.postsList.map(post => (
                     <div key={post.id}>
                         <Link passHref href={`/posts/${post.slugPost}`}>{post.title}</Link>
                         <img src={post.imgPost.url} alt={post.imgPost.alt} />
                     </div>
                 ))
-            }
+            */}
             <Footer />
         </>
     );
