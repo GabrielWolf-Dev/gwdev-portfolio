@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import ProgressBar from "nextjs-progressbar";
 
 import '../styles/globals.css';
 
@@ -23,6 +24,12 @@ function MyApp({ Component, pageProps }) {
         <meta property="twitter:description" content="Saiba mais sobre minha carreira profissional, tecnologias, interesses futuros, próximos passos e adquira conhecimento nas experiências compartilhadas no Blog do site!" />
         <meta property="twitter:image" content="https://raw.githubusercontent.com/GabrielWolf-Dev/gwdev-portfolio/main/public/imgs/seo-img.png" />
       </Head>
+      <ProgressBar
+        color={"#00ADB5"}
+        startPosition={0.5}
+        stopDelayMs={200}
+        height={5}
+      />
       <Component {...pageProps} />
     </>
   );

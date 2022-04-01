@@ -15,15 +15,7 @@ export default function Blog(props){
     return(
         <>
             <Header linksMenu={linksHeader} />
-            <Banner />
-            {/*
-                props.postsList.map(post => (
-                    <div key={post.id}>
-                        <Link passHref href={`/posts/${post.slugPost}`}>{post.title}</Link>
-                        <img src={post.imgPost.url} alt={post.imgPost.alt} />
-                    </div>
-                ))
-            */}
+            <Banner postsList={props.postsList} />
             <Footer />
         </>
     );

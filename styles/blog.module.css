@@ -1,13 +1,17 @@
+.container-blog {
+    width: 100%;
+    padding: 48px 4%;
+    background-color: var(--color-cian-darker);
+}
+
 /* Banner */
 .banner {
     width: 100%;
-    padding: 48px 4%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 24px;
-    background-color: var(--color-cian-darker);
     text-align: center;
 }
 
@@ -24,6 +28,93 @@
     width: 80%;
 }
 
+.line {
+    width: 80%;
+    height: 4px;
+    background-color: var(--color-mat-purple-dark);
+    border: 0;
+    border-radius: 50%;
+    margin: 48px auto;
+}
+
+/* Posts */
+.posts-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 0 2%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.posts-container__post {
+    width: 100%;
+    padding: 24px 2%;
+    margin: 32px auto;
+    border-radius: 12px;
+    background-color: var(--color-mat-purple-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.post__box-content {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    padding: 0 2%;
+}
+
+.post__tags {
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: var(--color-gray-white);
+    background-color: var(--color-blue);
+    display: inline-block;
+    margin-right: 16px;
+    margin-top: 8px;
+}
+
+.post__box-img {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+.post__img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.post__box-img__link-post {
+    text-align: center;
+    background-color: var(--color-blue);
+    color: var(--color-gray-white);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.link-post-desktop {
+    width: 32px;
+    height: 32px;
+    line-height: 36px;
+    display: none;
+}
+
+.post__box-img__icon-link {
+    width: 16px;
+    height: 16px;
+}
+
+.link-post-mobile {
+    width: 120px;
+    height: 32px;
+    line-height: 32px;
+    display: inline-block;
+}
+
 @media (min-width: 768px) {
     /* Banner */
     .banner {
@@ -34,5 +125,21 @@
 
     .banner__desc {
         width: 800px;
+    }
+
+    /* Post */
+    .posts-container__post {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .post__box-content { text-align: left; }
+    .post__box-img { text-align: right; }
+
+    .link-post-desktop {
+        display: inline-block;
+    }
+    .link-post-mobile {
+        display: none;
     }
 }

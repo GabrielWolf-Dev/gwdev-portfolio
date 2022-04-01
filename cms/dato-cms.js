@@ -76,6 +76,8 @@ async function getListPosts() {
                 id
                 title
                 slugPost
+                content1
+                categories
                 imgPost {
                     url(imgixParams: { fm: jpg, fit: crop, w: 600, h: 350 })
                     alt
