@@ -1,22 +1,27 @@
 import { useRouter } from 'next/router';
 import { getPost, getAllSlugs } from '../../cms/dato-cms';
 
+import Header from '../../src/components/Header';
+import Footer from '../../src/components/Footer';
+import Post from '../../src/components/blog/Post';
+
 export default function Posts(props) {
     const router = useRouter();
     if (router.isFallback) {
       return <h3>Carregando...</h3>
     }
+    const linksMenu = [
+      "Blog",
+      "Medium",
+      "Creditos"
+    ];
 
-    return(
-        <div>
-          <h1>Post</h1>
-          <h2>{props.post.title}</h2>
-          <img src={props.post.imgPost.url} alt={props.post.imgPost.alt} />
-          <p>{props.post.content1}</p>
-          <img src={props.post.imgSecondary.url} alt={props.post.imgSecondary.alt} />
-          <p>{props.post.content2}</p>
-        </div>
-        
+    return (
+      <>
+        <Header linksMenu={linksMenu} />
+        <Post post={props.post} />
+        <Footer />
+      </>
     );
 }
 
