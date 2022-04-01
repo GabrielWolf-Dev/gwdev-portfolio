@@ -101,6 +101,8 @@ async function getPost(slug) {
             ){
                 title
                 slugPost
+                date
+                categories
                 content1
                 imgPost {
                     url(imgixParams: { fm: jpg, fit: crop, w: 600, h: 350 })

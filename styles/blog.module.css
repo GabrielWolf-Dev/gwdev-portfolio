@@ -76,6 +76,8 @@
     margin-top: 8px;
 }
 
+.post__tags:last-child { margin-right: 0; }
+
 .post__box-img {
     width: 100%;
     max-width: 350px;
@@ -113,6 +115,21 @@
     height: 32px;
     line-height: 32px;
     display: inline-block;
+}
+
+/* Post */
+.post__main-img {
+    width: 80%;
+    border-radius: 12px;
+    margin: 32px auto 24px auto;
+    display: block;
+}
+
+.post__secondary-img {
+    width: 80%;
+    border-radius: 12px;
+    margin: 24px auto;
+    display: block;
 }
 
 @media (min-width: 768px) {
