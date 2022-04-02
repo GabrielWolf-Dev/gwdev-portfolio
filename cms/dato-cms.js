@@ -1,22 +1,25 @@
 async function fetchCmsApi(query, { variables } = {}) {
-    const res = await fetch(process.env.DATO_URL_ENDPOINT, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.DATO_API_KEY}`,
-        },
-        body: JSON.stringify({
-            query,
-            variables,
-        })
-    });
+    try {
+        const res = await fetch(process.env.DATO_URL_ENDPOINT, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${process.env.DATO_API_KEY}`,
+            },
+            body: JSON.stringify({
+                query,
+                variables,
+            })
+        });
+    
+        const json = await res.json();
 
-    const json = await res.json();
-    if(json.errors){
-        throw new Error("Failed to fetch API");
+        return json.data;
+    } catch(error) {
+        console.log("Failed to fetch API", error);
     }
 
-    return json.data;
+    
 }
 
 async function getMainIconTechs() {
@@ -95,7 +98,7 @@ async function getPost(slug) {
             post(
               filter: {
                 slugPost: {
-                  eq: ${slug}
+                  eq: "${slug}"
                 }
               }
             ){

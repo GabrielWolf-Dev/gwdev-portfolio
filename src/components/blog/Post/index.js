@@ -5,11 +5,10 @@ import styleSpaces from '../../../../styles/spaces.module.css';
 
 export default function Post({ post }) {
     const arrCategories = post.categories.split(',');
-    const formatDate = new Date(post.date);
-    const day = formatDate.getDate() + 1;
-    const month = formatDate.getMonth() + 1;
-    const year = formatDate.getFullYear();
-    
+    const [year, month, day] = post.date.split('-');
+    const content1Formated = post.content1.split('break');
+    const content2Formated = post.content2.split('break');
+
     return(
         <div className={styles["container-blog"]}>
             <main className={`container ${styleFonts["text-center"]}`}> 
@@ -26,7 +25,7 @@ export default function Post({ post }) {
                         ${styleFonts["text-white"]}
                         ${styleSpaces["my-16"]}
                     `}
-                >Publicado em {`${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}/${year}`}</h3>
+                >Publicado em {`${day}/${month}/${year}`}</h3>
                 {arrCategories.map((category, index) => 
                     <div
                         className={`
@@ -40,35 +39,39 @@ export default function Post({ post }) {
                     src={post.imgPost.url}
                     alt={post.imgPost.alt}
                 />
-                <p
-                    className={`
-                        ${styleFonts["paragraph"]}
-                        ${styleFonts["text-white"]}
-                        ${styleFonts["text-left"]}
-                    `}
-                >
-                    {post.content1}
-                </p>
-                {post.imgPost !== null
-                && (
-                    <img
-                        className={styles["post__secondary-img"]}
-                        src={post.imgPost.url}
-                        alt={post.imgPost.alt}
-                    />
-                )}
-                {post.content2 !== null 
-                && (
+                {content1Formated.map((content, index) => (
                     <p
+                        key={index}
                         className={`
                             ${styleFonts["paragraph"]}
                             ${styleFonts["text-white"]}
                             ${styleFonts["text-left"]}
                         `}
                     >
-                        {post.content2}
+                        {content}
                     </p>
+                ))}
+                {post.imgPost !== null
+                && (
+                    <img
+                        className={styles["post__secondary-img"]}
+                        src={post.imgSecondary.url}
+                        alt={post.imgSecondary.alt}
+                    />
                 )}
+                {post.content2 !== null 
+                && content2Formated.map((content, index) => (
+                    <p
+                        key={index}
+                        className={`
+                            ${styleFonts["paragraph"]}
+                            ${styleFonts["text-white"]}
+                            ${styleFonts["text-left"]}
+                        `}
+                    >
+                        {content}
+                    </p>
+                ))}
             </main>
         </div>
     );
