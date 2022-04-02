@@ -1,5 +1,5 @@
 /* Components */
-import Header from "../src/components/Header";
+import PageDevelopment from "./develop";
 
 export default function Creditos(){
     const linksHeader = [
@@ -10,8 +10,7 @@ export default function Creditos(){
 
     return(
         <>
-            <Header linksMenu={linksHeader} />
-            Creditos
+            <PageDevelopment />
         </>
     );
 }

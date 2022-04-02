@@ -58,6 +58,25 @@ button, input[type="submit"] {
   flex-direction: column;
 }
 
+.link-home {
+  width: 100%;
+  max-width: 200px;
+  height: 42px;
+  line-height: 42px;
+  border-radius: 12px;
+  background-color: var(--color-blue);
+  color: var(--color-gray-white);
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  transition: all ease-in .3s;
+}
+
+.link-home:hover {
+  opacity: 0.8;
+  color: var(--color-black);
+}
+
 *::-webkit-scrollbar {
   width: 8px;
 }
