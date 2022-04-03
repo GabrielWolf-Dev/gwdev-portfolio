@@ -54,7 +54,7 @@ export async function getStaticProps() {
   const mainTechIcons = await getMainIconTechs();
   const basicTechIcons = await getBasicIconTechs();
   const mainProjects = await getMainProjects();
-  const resGitActs = await fetch(`${url}/repos?order=asc&sort=updated_at`);
+  const resGitActs = await fetch(`${url}/repos?sort=updated_at`);
   const gitActsData = await resGitActs.json();
   const gitActs = [];
   gitActsData.forEach((act, index) => {
@@ -75,7 +75,8 @@ export async function getStaticProps() {
       });
     }
   });
-  const revalidateTemp = 604800 / 86400; // 7 dias
+  gitActs.reverse();
+  const revalidateTemp = 604800 / 86400; // 7 days
   
   return {
     props: {

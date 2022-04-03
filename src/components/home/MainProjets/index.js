@@ -9,7 +9,7 @@ import styleSpaces from '../../../../styles/spaces.module.css';
 export default function MainProjects({ mainProjects }) {
     return(
         <section className={styleHome["main-project"]}>
-            <h2 className={styleFonts.title}>Princais projetos</h2>
+            <h2 className={styleFonts.title}>Principais projetos</h2>
             <p
                 className={`
                     ${styleFonts.paragraph} 
@@ -17,7 +17,7 @@ export default function MainProjects({ mainProjects }) {
                     ${styleSpaces["my-16"]}
                 `}
             >
-                Aqui estão os principais projetos atuais:
+                Aqui estão os projetos mais recentes:
             </p>
             
             <div className={styleHome["main-project__container"]}>
