@@ -75,7 +75,6 @@ export async function getStaticProps() {
       });
     }
   });
-  gitActs.reverse();
   const revalidateTemp = 604800 / 86400; // 7 days
   
   return {
