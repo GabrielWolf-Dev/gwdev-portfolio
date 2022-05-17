@@ -14,8 +14,8 @@ export default function Banner({ gitHubDatas }) {
     const words = [
         gitHubDatas.name,
         "Front-End",
+        "Back-End",
         "Engenharia de Software",
-        "UI/UX Design",
         "JavaScript 🧑‍💻"
     ];
 

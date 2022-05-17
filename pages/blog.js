@@ -1,6 +1,7 @@
 import { getListPosts } from '../cms/dato-cms';
 
 /* Components */
+import TitleHead from '../src/components/Head';
 import Header from "../src/components/Header";
 import Footer from '../src/components/Footer';
 import Banner from '../src/components/blog/Banner';
@@ -14,6 +15,7 @@ export default function Blog(props){
 
     return(
         <>
+            <TitleHead>GWDev-Portfólio | Blog</TitleHead>
             <Header linksMenu={linksHeader} />
             <Banner postsList={props.postsList} />
             <Footer />

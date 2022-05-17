@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { getPost, getAllSlugs } from '../../cms/dato-cms';
 
+import TitleHead from '../../src/components/Head';
 import Header from '../../src/components/Header';
 import Footer from '../../src/components/Footer';
 import Post from '../../src/components/blog/Post';
@@ -18,6 +19,7 @@ export default function Posts(props) {
 
     return (
       <>
+        <TitleHead>GWDev-Portfólio | Post</TitleHead>
         <Header linksMenu={linksMenu} />
         <Post post={props.post} />
         <Footer />
